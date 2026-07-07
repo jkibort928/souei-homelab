@@ -1,1 +1,1 @@
-fromTempest/tailscaleServe.sh
+/home/spoob/Scripts/fromTempest/tailscaleServe.sh
