@@ -1,0 +1,42 @@
+/*
+    Optionals Legend:
+        '*#' = prospective   (useful but unneeded atm, install when needed)
+        '?#' = optional      (probably don't need this)
+        '!#' = unneeded      (don't need this)
+*/
+
+#RESTRICT dnf
+
+<essential>
+    <git>
+        git
+        git-subtree
+    </git>
+    
+    curl
+</essential>
+
+<deps>
+    <ghcup>
+        gcc
+        gcc-c++
+        gmp
+        gmp-devel
+        make
+        ncurses 
+        ncurses-compat-libs
+        xz
+        perl
+    </ghcup>
+</deps>
+
+<tools>
+    btop
+    fzf
+    ncdu
+    tmux
+    !# sqlite # needed it once
+    ?# stress-ng # thermal testing
+
+    fastfetch
+</tools>
