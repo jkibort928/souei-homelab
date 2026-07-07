@@ -1,0 +1,1 @@
+/home/spoob/dev/personal/tempest-homelab/shell/shrc.d/
