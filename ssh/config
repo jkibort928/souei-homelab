@@ -1,0 +1,23 @@
+Host github-mystuff
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_myStuff-pull
+    IdentitiesOnly yes
+
+Host github-tempest-homelab
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_tempest-pull
+    IdentitiesOnly yes
+    
+Host github-souei-homelab
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_deploy_server_config
+    IdentitiesOnly yes
+
+# Tempest server via tailscale
+Host tempest
+    HostName tempest
+    User spoob
+    IdentityFile ~/.ssh/id_ed25519
