@@ -35,7 +35,6 @@
     fzf
     ncdu
     tmux
-    !# sqlite # needed it once
     ?# stress-ng # thermal testing
 
     fastfetch
