@@ -1,0 +1,35 @@
+[Unit]
+Description=ConvertX Video Converter
+After=network-online.target
+
+[Container]
+ContainerName=convertx
+Image=ghcr.io/c4illin/convertx:latest
+AutoUpdate=registry
+
+UserNS=keep-id
+User=1000:1000
+
+Memory=2G
+
+# Pass through AMD iGPU for VAAPI hardware encoding
+AddDevice=/dev/dri:/dev/dri
+Annotation=run.oci.keep_groups=true
+
+# Storage Mounts
+Volume=%h/srv/@convertx/config:/app/data:Z
+
+# RAM disk for scratch processing
+Mount=type=tmpfs,destination=/tmp,tmpfs-size=6g
+
+PublishPort=3000:3000
+
+Volume=/etc/localtime:/etc/localtime:ro
+
+[Install]
+WantedBy=default.target
+
+[Service]
+CPUWeight=100
+Restart=on-failure
+RestartSec=5
