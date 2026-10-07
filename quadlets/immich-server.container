@@ -2,8 +2,8 @@
 Description=Immich Server
 After=immich-db.service immich-redis.service immich-ml.service
 Requires=immich-db.service immich-redis.service immich-ml.service
-StartLimitBurst=5
-StartLimitIntervalSec=60
+StartLimitIntervalSec=0
+RequiresMountsFor=/var/mnt/photos
 
 [Container]
 ContainerName=immich-server
@@ -29,7 +29,7 @@ AddDevice=/dev/dri:/dev/dri
 # Ensures container sees the 'video' and 'render' groups
 Annotation=run.oci.keep_groups=true
 
-Volume=/var/mnt/photos:/usr/src/app/upload:Z
+Volume=/var/mnt/photos:/usr/src/app/upload
 Network=immich-internal.network
 PublishPort=2283:2283
 
@@ -41,4 +41,5 @@ WantedBy=default.target
 [Service]
 CPUWeight=100
 Restart=on-failure
-RestartSec=5
+RestartSec=15
+ExecStartPre=/usr/bin/test -f /var/mnt/photos/encoded-video/.immich
