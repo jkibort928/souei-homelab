@@ -6,7 +6,7 @@ This repository tracks the configuration for **Souei**, the compute-heavy second
 Like Tempest, Souei is a headless "slabtop". I acquired an **Acemagic LX15PRO** with a cracked LCD on an eBay auction for under $100, stripped the broken screen panel off entirely, and repasted the CPU with PTM-7950 to keep things quiet.
 * **CPU:** AMD Ryzen 5 7430u (6 Cores / 12 Threads)
 * **RAM:** 16GB DDR4
-* **Storage:** 512GB NVMe
+* **Storage:** 128GB NVMe
 
 ### Architecture & Workloads
 * **Host Operating System:** Fedora IoT (Atomic/Immutable Linux).
